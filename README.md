@@ -1,4 +1,4 @@
-# cs6810-ssa-optimizer-project
+# cs6810-lvn-ssa-optimizer-project
 The code provided for the CS 6810 SSA optimizer project
 
 There two subdirectories: **antlr/** and **javacc/**. Each director has an iloc parser in it. To build the parser, type _make full_ in either directory. That command will run _build.bash_ in the **src/parser** to generate the parser files from the grammar. Once the parser files are generated, you can just do a _make_ to skip building the parser again. If you change the grammar file, you'll need to re-generate the parser by doing a _make full_.
