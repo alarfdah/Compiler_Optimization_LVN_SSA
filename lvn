@@ -1,0 +1,56 @@
+#!/bin/bash
+echo "Program starting"
+echo "----------arrayparam----------"
+time java -jar ./antlr/iopt.jar ./input/arrayparam.il
+java -jar iloc.jar -s ./input/arrayparam.il > ./output/arrayparam.out
+java -jar iloc.jar -s ./input/arrayparam.lvn.il > ./output/arrayparam.lvn.out
+diff ./output/arrayparam.out ./output/arrayparam.lvn.out
+echo "------------------------------"
+echo "------------bubble------------"
+time java -jar ./antlr/iopt.jar ./input/bubble.il
+java -jar iloc.jar -s ./input/bubble.il > ./output/bubble.out
+java -jar iloc.jar -s ./input/bubble.lvn.il > ./output/bubble.lvn.out
+diff ./output/bubble.out ./output/bubble.lvn.out
+echo "------------------------------"
+echo "------------check-------------"
+time java -jar ./antlr/iopt.jar ./input/check.il
+java -jar iloc.jar -s ./input/check.il > ./output/check.out
+java -jar iloc.jar -s ./input/check.lvn.il > ./output/check.lvn.out
+diff ./output/check.out ./output/check.lvn.out
+echo "------------------------------"
+echo "-----------dynamic------------"
+time java -jar ./antlr/iopt.jar ./input/dynamic.il
+java -jar iloc.jar -s ./input/dynamic.il > ./output/dynamic.out
+java -jar iloc.jar -s ./input/dynamic.lvn.il > ./output/dynamic.lvn.out
+diff ./output/dynamic.out ./output/dynamic.lvn.out
+echo "------------------------------"
+echo "-------------fib--------------"
+time java -jar ./antlr/iopt.jar ./input/fib.il
+java -jar iloc.jar -s ./input/fib.il > ./output/fib.out
+java -jar iloc.jar -s ./input/fib.lvn.il > ./output/fib.lvn.out
+diff ./output/fib.out ./output/fib.lvn.out
+echo "------------------------------"
+echo "--------------gcd-------------"
+time java -jar ./antlr/iopt.jar ./input/gcd.il < ./input/gcd.in
+java -jar iloc.jar -s ./input/gcd.il < ./input/gcd.in > ./output/gcd.out
+java -jar iloc.jar -s ./input/gcd.lvn.il < ./input/gcd.in > ./output/gcd.lvn.out
+diff ./output/gcd.out ./output/gcd.lvn.out
+echo "------------------------------"
+echo "------------newdyn------------"
+time java -jar ./antlr/iopt.jar ./input/newdyn.il
+java -jar iloc.jar -s ./input/newdyn.il > ./output/newdyn.out
+java -jar iloc.jar -s ./input/newdyn.lvn.il > ./output/newdyn.lvn.out
+diff ./output/newdyn.out ./output/newdyn.lvn.out
+echo "------------------------------"
+echo "--------------qs--------------"
+time java -jar ./antlr/iopt.jar ./input/qs.il < ./input/qs.in
+java -jar iloc.jar -s ./input/qs.il < ./input/qs.in > ./output/qs.out
+java -jar iloc.jar -s ./input/qs.lvn.il < ./input/qs.in  > ./output/qs.lvn.out
+diff ./output/qs.out ./output/qs.lvn.out
+echo "------------------------------"
+echo "---------while_array----------"
+time java -jar ./antlr/iopt.jar ./input/while_array.il
+java -jar iloc.jar -s ./input/while_array.il > ./output/while_array.out
+java -jar iloc.jar -s ./input/while_array.lvn.il > ./output/while_array.lvn.out
+diff ./output/while_array.out ./output/while_array.lvn.out
+echo "Done."

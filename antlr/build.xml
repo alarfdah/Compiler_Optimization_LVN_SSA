@@ -1,0 +1,50 @@
+<?xml version = "1.0"?>
+<project name = "CExpression Evaluator" basedir = "." default = "build">
+	<property name = "src.dir" value = "src"/>
+	<property name = "build.dir" value = "classes"/>
+	<property name = "lib.dir" value = "lib"/>
+
+	<path id = "master-classpath">
+		<pathelement path = "${build.dir}"/>
+		<fileset dir = "${lib.dir}">
+			<include name = "*.jar"/>
+		</fileset>
+	</path>
+
+	<target name = "info">
+		<echo>Iloc Optimizer</echo>
+	</target>
+
+	<target name="print-classpath">
+		<pathconvert property="classpathInName" refid="master-classpath" />
+		<echo>Classpath is ${classpathInName}</echo>
+  </target>
+
+	<target name = "build" description = "Compile source files">
+		<mkdir dir = "${build.dir}"/>
+		<javac destdir = "${build.dir}" source = "11" target = "11" debug = "true"
+			deprecation = "false" optimize = "false" failonerror = "true"
+			includeantruntime = "true">
+			<src path = "${src.dir}"/>
+			<classpath refid = "master-classpath"/>
+		</javac>
+	</target>
+
+	<target name = "build-jar">
+   		<jar destfile = "iopt.jar">
+			<fileset dir="${build.dir}" includes="**/*.class"/>
+			<zipgroupfileset dir="${lib.dir}" includes="*.jar"/>
+      			<manifest>
+         			<attribute name = "Main-Class" value = "driver.CodeGenerator"/>
+      			</manifest>
+   		</jar>
+	</target>
+
+	<target name = "clean" description = "Delete class files">
+		<delete>
+			<fileset dir = "${build.dir}">
+				<include name = "**/*.class"/>
+			</fileset>
+		</delete>
+	</target>
+</project>

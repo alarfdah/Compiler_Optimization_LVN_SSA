@@ -1,0 +1,46 @@
+#!/bin/bash
+echo "arrayparam"
+cd arrayparam
+iloc -s arrayparam.il > arrayparam.out
+iloc -s arrayparam.opt.il > arrayparam.opt.out
+diff arrayparam*.out
+echo "bubble"
+cd ../bubble
+iloc -s bubble.il > bubble.out
+iloc -s bubble.opt.il > bubble.opt.out
+diff bubble*.out
+echo "check"
+cd ../check
+iloc -s check.il > check.out
+iloc -s check.opt.il > check.opt.out
+diff check*.out
+echo "dynamic"
+cd ../dynamic
+iloc -s dynamic.il > dynamic.out
+iloc -s dynamic.opt.il > dynamic.opt.out
+diff dynamic*.out
+echo "fib"
+cd ../fib
+iloc -s fib.il > fib.out
+iloc -s fib.opt.il > fib.opt.out
+diff fib*.out
+echo "newdyn"
+cd ../newdyn
+iloc -s newdyn.il > newdyn.out
+iloc -s newdyn.opt.il > newdyn.opt.out
+diff newdyn*.out
+echo "qs"
+cd ../qs
+iloc -s qs.il < qs.in > qs.out
+iloc -s qs.opt.il < qs.in  > qs.opt.out
+diff qs*.out
+echo "while"
+cd ../while
+iloc -s while.il > while.out
+iloc -s while.opt.il > while.opt.out
+diff while*.out
+echo "while_array"
+cd ../while_array
+iloc -s while_array.il > while_array.out
+iloc -s while_array.opt.il > while_array.opt.out
+diff while_array*.out

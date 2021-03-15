@@ -1,0 +1,56 @@
+#!/bin/bash
+echo "Program starting"
+echo "----------arrayparam----------"
+time java -jar ./antlr/iopt.jar ./input/arrayparam.il
+java -jar iloc.jar -s ./input/arrayparam.il > ./output/arrayparam.out
+java -jar iloc.jar -s ./input/arrayparam.gre.il > ./output/arrayparam.gre.out
+diff ./output/arrayparam.out ./output/arrayparam.gre.out
+echo "------------------------------"
+echo "------------bubble------------"
+time java -jar ./antlr/iopt.jar ./input/bubble.il
+java -jar iloc.jar -s ./input/bubble.il > ./output/bubble.out
+java -jar iloc.jar -s ./input/bubble.gre.il > ./output/bubble.gre.out
+diff ./output/bubble.out ./output/bubble.gre.out
+echo "------------------------------"
+echo "------------check-------------"
+time java -jar ./antlr/iopt.jar ./input/check.il
+java -jar iloc.jar -s ./input/check.il > ./output/check.out
+java -jar iloc.jar -s ./input/check.gre.il > ./output/check.gre.out
+diff ./output/check.out ./output/check.gre.out
+echo "------------------------------"
+echo "-----------dynamic------------"
+time java -jar ./antlr/iopt.jar ./input/dynamic.il
+java -jar iloc.jar -s ./input/dynamic.il > ./output/dynamic.out
+java -jar iloc.jar -s ./input/dynamic.gre.il > ./output/dynamic.gre.out
+diff ./output/dynamic.out ./output/dynamic.gre.out
+echo "------------------------------"
+echo "-------------fib--------------"
+time java -jar ./antlr/iopt.jar ./input/fib.il
+java -jar iloc.jar -s ./input/fib.il > ./output/fib.out
+java -jar iloc.jar -s ./input/fib.gre.il > ./output/fib.gre.out
+diff ./output/fib.out ./output/fib.gre.out
+echo "------------------------------"
+echo "--------------gcd-------------"
+time java -jar ./antlr/iopt.jar ./input/gcd.il < ./input/gcd.in
+java -jar iloc.jar -s ./input/gcd.il < ./input/gcd.in > ./output/gcd.out
+java -jar iloc.jar -s ./input/gcd.gre.il < ./input/gcd.in > ./output/gcd.gre.out
+diff ./output/gcd.out ./output/gcd.gre.out
+echo "------------------------------"
+echo "------------newdyn------------"
+time java -jar ./antlr/iopt.jar ./input/newdyn.il
+java -jar iloc.jar -s ./input/newdyn.il > ./output/newdyn.out
+java -jar iloc.jar -s ./input/newdyn.gre.il > ./output/newdyn.gre.out
+diff ./output/newdyn.out ./output/newdyn.gre.out
+echo "------------------------------"
+echo "--------------qs--------------"
+time java -jar ./antlr/iopt.jar ./input/qs.il < ./input/qs.in
+java -jar iloc.jar -s ./input/qs.il < ./input/qs.in > ./output/qs.out
+java -jar iloc.jar -s ./input/qs.gre.il < ./input/qs.in  > ./output/qs.gre.out
+diff ./output/qs.out ./output/qs.gre.out
+echo "------------------------------"
+echo "---------while_array----------"
+time java -jar ./antlr/iopt.jar ./input/while_array.il
+java -jar iloc.jar -s ./input/while_array.il > ./output/while_array.out
+java -jar iloc.jar -s ./input/while_array.gre.il > ./output/while_array.gre.out
+diff ./output/while_array.out ./output/while_array.gre.out
+echo "Done."
